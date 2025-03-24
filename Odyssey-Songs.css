@@ -415,7 +415,9 @@ nav a:last-child::after {
   }
 
   .saga {
-    margin-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px; /* Ajuste porque el header se hace más alto */
   }
 
   .letra p{
