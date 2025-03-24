@@ -342,7 +342,7 @@ nav a:last-child::after {
   }
   
   .letra {
-    flex: 1; /* Que la letra ocupe menos espacio */
+    flex: 0; /* Que la letra ocupe menos espacio */
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Distribuye los <p> en el espacio */
@@ -418,8 +418,14 @@ nav a:last-child::after {
     margin-top: 60px;
   }
 
-  .letra{
+  .letra p{
     display: none;
+    width: 0px;
+    height: 0px;
+  }
+
+  .contenido{
+    width: 80%;
   }
 
   p {
