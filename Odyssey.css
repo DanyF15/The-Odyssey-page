@@ -1,0 +1,380 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}/*esto es para retirar los estilos que trae por defaultd el navegador*/
+
+@font-face{
+    font-family: 'theseason';
+    src: url(fonts/theseasons/Fontspring-DEMO-theseasons-reg.otf);
+    font-weight: bold;
+    font-size: bold;
+}
+
+
+@font-face {
+    font-family: 'obraletra';
+    src: url(fonts/obraletra/KCObraLetraRegular.ttf);
+    font-weight: bold;
+    font-size: bold;
+}
+
+/*aqui empiezan las configuracion del encabenzado*/
+header {
+    background-color: #273234; /* Gris oscuro */
+    padding: 20px 0;
+    text-align: center;
+    height: 90px;
+    position: fixed;     /* Esto lo hace fijo */
+    top: 0;              /* Pegado al tope de la pantalla */
+    width: 100%;         /* Que abarque todo el ancho */
+    z-index: 1000; 
+
+}
+
+head nav a {
+    font-family: 'obraletra';
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+header nav a.main-link::after {
+    content: "|";
+    color: #ffff;
+    font-size: 30px;
+    margin: 0 8px;
+  }
+  
+  /* Elimina la línea para el último enlace principal (opcional, si no quieres línea al final) */
+  header nav a.main-link:last-child::after {
+    content: ""; /* quita la línea del último */
+  }
+.desplegableop:last-child::after { 
+    content: ""; /* no muestra la barra después del último link */
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .main-link {
+    font-family: 'obraletra';
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #273234;
+    min-width: 160px;
+    z-index: 1;
+    flex-direction: column;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'obraletra';
+    font-size: 20px;
+}
+
+.dropdown-content a:hover {
+    background-color: #3e4a4c;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+h1{
+  font-family: 'obraletra';
+  display: flex;
+  margin-left: 40px;
+  font-size: xx-large;
+  margin-bottom: 20px;
+}
+
+/*aqui terminan*/
+
+/*empieza configuracion del apartado epic*/
+.Epic{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 80px;
+}
+
+.contenido{
+    font-family: 'theseason';
+    font-size:medium;
+    flex: 3;
+    padding-right: 20px;
+}
+
+#Epic-imgcontainer{
+    width: 321px; /* ancho fijo más reducido */
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: #cfddda;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+#Epic-imgcontainer img{
+    max-width: 200px;
+    margin-top: 35px;
+}
+
+#contenidoEpic{
+    margin-left: 28px;
+    margin-right: 28px;
+    padding-right: 30px;
+    padding-top: 80px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    font-size: 18px;
+
+}
+/*termina la configuracion del apartado epic*/
+
+/*empieza la configuracion de la seccion cast*/
+#Cast{
+    margin-top: 95px;
+
+}
+/*termina la configuracion de la seccion cast*/
+
+/*empieza la configuracion de la seccion book*/
+#Book{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 95px;
+}
+
+#Book-imgcontainer{
+    margin-top: 125px;
+    width: 235px; /* ancho fijo más reducido */
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: #cfddda;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+#Book-imgcontainer img{
+    max-width: 200px;
+    max-height: 400px;
+}
+
+#contenidoBook{
+    margin-left: 40px;
+    margin-right: 28px;
+    padding-right: 30px;
+    padding-top: 0px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    margin-top: 80px;
+
+}
+/*termina la configuracion de la seccion book*/
+
+p{
+    margin: 25px;
+}
+
+.containercarrusel{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: fit-content; /* que se ajuste al contenido o */
+    max-width: calc(70% - 400px); /* controla ancho máximo si necesitas */
+    margin-left: 230px; /* igual que .contenido (para alinearlo) */
+    margin-top: 20px;
+    padding-bottom: 10px;
+
+    margin-top: 10px; /* ajusta cuánto se monta sobre .Epic */
+
+    position: relative; /* permite moverlo con margen negativo */
+
+    scrollbar-width: thin;
+    scrollbar-color: #f1f1f1 transparent;
+
+
+
+}
+
+.carruselelement{
+    flex:1 0 auto ;
+    margin: 0 20px;
+    width: 150px;
+    height: 150px;
+
+
+    /*border: 1px solid black;
+    height: 100%;va a acbarcar todo el espacio disponible del contenedor
+    position: relative;
+    color: aliceblue;*/
+}
+
+.carruselelement img{
+    width: 100%;
+    height: 100%;
+}
+
+#History{
+    margin-top: 95px;
+    margin-left: 80px;
+
+}
+
+#Cast{
+    margin-top: 211px;
+}
+
+#cast{
+  margin-left: 80px;
+  display: flex;
+}
+
+footer{
+  width: 100%;
+  background-color:#3e4a4c;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+
+/* ======= MEDIA QUERIES: Estilos para pantallas menores a 768px (celular/tablet) ======= */
+@media (max-width: 768px) {
+    /* Encabezado: menú se apila vertical */
+    header {
+      height: auto;
+      padding: 10px 0;
+    }
+  
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav .dropdown {
+      margin-bottom: 10px;
+    }
+  
+    header nav a.main-link::after {
+      display: none; /* Quita la barra "|" en móviles */
+    }
+  
+    /* Dropdown desplegable ocupa todo el ancho y se muestra debajo */
+    .dropdown-content {
+      position: static;
+      width: 100%;
+      box-shadow: none;
+    }
+  
+    .dropdown-content a {
+      text-align: center;
+      padding: 10px;
+      font-size: 18px;
+    }
+  
+    /* Sección Epic en columna */
+    .Epic {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 100px; /* Ajuste porque el header se hace más alto */
+    }
+  
+    #Epic-imgcontainer {
+      width: 90%;
+      height: auto;
+    }
+  
+    #Epic-imgcontainer img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    #contenidoEpic {
+      margin: 20px;
+      padding: 20px;
+      font-size: 16px;
+    }
+  
+    /* Carrusel: usa todo el ancho disponible */
+    .containercarrusel {
+      max-width: 100%;
+      margin-left: 0;
+      padding: 0 10px;
+    }
+  
+    .carruselelement {
+      width: 120px;
+      height: 120px;
+      margin: 0 10px;
+    }
+  
+    /* Sección Book: en columna */
+    #Book {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #Book-imgcontainer {
+      width: 90%;
+      height: auto;
+      margin-top: 20px;
+    }
+  
+    #Book-imgcontainer img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    #contenidoBook {
+      margin: 20px;
+      padding: 20px;
+      font-size: 16px;
+    }
+  
+    /* Ajuste de márgenes en otras secciones */
+    #Cast, #History {
+      margin-top: 60px;
+    }
+  
+    p {
+      margin: 15px;
+      font-size: 16px;
+    }
+  }
+
