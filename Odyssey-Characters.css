@@ -112,10 +112,21 @@ header nav a.main-link::after {
     padding-right: 20px;
     margin: 20px;
     margin-top: 95px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    text-align: center; /* Asegura que el texto dentro esté centrado */
+
 }
 
 .characters{
     display: flex;
+}
+
+p{
+  margin-top: 10px;
 }
 
 .Perfil{
